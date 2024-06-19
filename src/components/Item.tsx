@@ -22,7 +22,7 @@ export const Item = ({ item }: Props) => {
                 <CardHeader>
                     <CardTitle className="flex gap-4 items-center">
                         <ReorderIcon dragControls={dragControls} />
-                        <p>I have to create a project {item}</p>
+                        <p>{item}</p>
                     </CardTitle>
                 </CardHeader>
             </Card>

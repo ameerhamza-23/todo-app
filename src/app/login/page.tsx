@@ -17,7 +17,7 @@ function Login() {
                 <Input type="text" placeholder="name@gmail.com" className="bg-input"/>
                 <h1>Password</h1>
                 <Input placeholder="Password" type="password" className="bg-input"/>
-                <Button className="w-full text-primary-foreground">Login</Button>
+                <Button className="w-full text-white">Login</Button>
                 <div className="p-4">
                     <Link href="/"><h1  className="text-center p-2">Forgot Password?</h1></Link>
                     <div className="text-center p-2">Dont have an account? <Link href="/signup" className="text-primary">Signup</Link></div>
