@@ -6,7 +6,7 @@ interface Props {
 
 export function ReorderIcon({ dragControls }: Props) {
     return (
-        <svg width="14px" height="14px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className="si-glyph si-glyph-dial-number hover:cursor-pointer" onPointerDown={(e) => dragControls.start(e)}>
+        <svg width="24px" height="24px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className="si-glyph si-glyph-dial-number hover:cursor-pointer" onPointerDown={(e) => dragControls.start(e)}>
 
             <title>105</title>
 

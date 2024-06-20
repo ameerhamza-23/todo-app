@@ -43,15 +43,15 @@ export default function Home() {
 
   return (
     <div className="w-full flex justify-center h-full">
-      <div className="w-1/2">
-        <div className="flex justify-between gap-4">
+      <div className="md:w-1/2 w-3/4">
+        <div className="md:flex md:justify-between md:gap-4">
           <Input
             placeholder="Add a new task"
-            className="w-5/6 bg-secondary"
+            className="w-5/6 bg-secondary hidden md:block"
             value={current}
             onChange={(e) => setCurrent(e.target.value)}
           />
-          <Button className="w-24 text-primary-foreground bg-primary flex-grow" onClick={handleClick}>
+          <Button className="md:w-24 text-primary-foreground bg-primary md:flex-grow w-full" onClick={handleClick}>
             Create Task
           </Button>
         </div>

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { ChangeEvent } from "react";
+import Image from "next/image";
 
 function Signup() {
     const [user, setUser] = useState({
@@ -33,6 +34,8 @@ function Signup() {
                     placeholder="Email"
                     value={user.email}
                     onChange={handleChange}
+                    className="bg-secondary"
+                    
                 />
                 <Input
                     type="password"
@@ -40,6 +43,7 @@ function Signup() {
                     placeholder="Create Password"
                     value={user.password}
                     onChange={handleChange}
+                    className="bg-secondary"
                 />
                 <Input
                     type="password"
@@ -47,11 +51,12 @@ function Signup() {
                     placeholder="Confirm Password"
                     value={user.confirmPassword}
                     onChange={handleChange}
+                    className="bg-secondary"
                 />
-                <Button className="w-full text-white" onClick={handleSubmit}>Sign up</Button>
+                <Button className="w-full text-primary-foreground" onClick={handleSubmit}>Sign up</Button>
                 <div className="">
                     <div className="text-center p-2">
-                        Dont have an account? <Link href="/signup" className="text-primary">Signup</Link>
+                       Alreadt have an account? <Link href="/login" className="text-primary">Login</Link>
                     </div>
                 </div>
                 <div className="flex items-center gap-2 py-1">
@@ -59,7 +64,10 @@ function Signup() {
                     <div className="text-center">or</div>
                     <div className="bg-foreground" style={{ height: '1px', flex: 1 }}></div>
                 </div>
-                <Button className="" variant="secondary">Login With Google Account</Button>
+                <Button className="flex gap-4" variant="secondary">
+                    <Image src="google-icon.svg" alt="google logo" width={20} height={20}/>
+                    <p>Sign up With Google Account</p>
+                </Button>
             </div>
         </div>
     );

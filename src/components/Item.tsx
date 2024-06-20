@@ -25,12 +25,12 @@ export const Item = ({ item, onDelete }: Props) => {
       dragControls={dragControls}
       style={{ userSelect: "none" }}
     >
-      <Card>
+      <Card className="md:h-[80px] h-[60px]">
         <CardHeader>
-          <CardTitle className="flex gap-4 items-center">
+          <CardTitle className="flex gap-4 px-4 items-center w-full md:h-[80px] h-[60px]">
             <ReorderIcon dragControls={dragControls} />
-            <div className="flex justify-between w-full items-center">
-              <p>{item}</p>
+            <div className="flex justify-between w-full">
+              <p className="text-sm md:text-2xl">{item}</p>
               <button onClick={handleDelete}>
                 <Image src="delete-5.svg" alt="delete image" width={20} height={20} />
               </button>
