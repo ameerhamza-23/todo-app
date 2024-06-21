@@ -8,6 +8,15 @@ import { Reorder } from "framer-motion";
 import { Item } from "@/components/Item";
 import { getTasksFromLocalStorage, saveTasksToLocalStorage } from "@/lib/localStorage";
 
+import {
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+
 export default function Home() {
   const [items, setItems] = useState<string[]>([]);
   const [current, setCurrent] = useState("");
@@ -37,7 +46,7 @@ export default function Home() {
   const handleClick = () => {
     if (current.trim()) {
       addItem(current);
-      setCurrent(""); // Clear the input field after adding the item
+      setCurrent("");
     }
   };
 
@@ -51,14 +60,43 @@ export default function Home() {
             value={current}
             onChange={(e) => setCurrent(e.target.value)}
           />
-          <Button className="md:w-24 text-primary-foreground bg-primary md:flex-grow w-full" onClick={handleClick}>
+          <Button className="md:w-24 hidden md:block text-primary-foreground bg-primary md:flex-grow w-full" onClick={handleClick}>
             Create Task
           </Button>
+          <div className="md:hidden w-full">
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="outline" className="w-full bg-primary text-primary-foreground">Create Task</Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-[400px] rounded-lg">
+                <DialogHeader>
+                  <DialogTitle>Add a new task</DialogTitle>
+                </DialogHeader>
+                <div className="grid gap-4 py-4">
+                  <div className="items-center">
+                    <Input
+                      id="name"
+                      defaultValue="Pedro Duarte"
+                      className="w-full"
+                      placeholder="Add a new task"
+                      value={current}
+                      onChange={(e) => setCurrent(e.target.value)}
+                    />
+                  </div>
+                </div>
+                <DialogFooter>
+                  <Button onClick={handleClick} type="submit">Create</Button>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
+          </div>
+
+
         </div>
         <div className="pt-10">
           <Reorder.Group axis="y" onReorder={reorderItems} values={items} className="flex flex-col gap-4">
             {items.map((item) => (
-              <Item key={item} item={item} onDelete={removeItem} /> // Pass removeItem function as prop
+              <Item key={item} item={item} onDelete={removeItem} />
             ))}
           </Reorder.Group>
         </div>

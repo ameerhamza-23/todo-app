@@ -13,7 +13,7 @@ export function ReorderIcon({ dragControls }: Props) {
             <defs>
 
             </defs>
-            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g transform="translate(1.000000, 1.000000)" fill="#434343">
                     <path d="M13.878,2.639 C13.878,3.274 13.429,3.791 12.874,3.791 L11.003,3.791 C10.45,3.791 10,3.273 10,2.639 L10,1.15 C10,0.515 10.45,0 11.003,0 L12.874,0 C13.429,0 13.878,0.516 13.878,1.15 L13.878,2.639 L13.878,2.639 Z" className="si-glyph-fill">
 
