@@ -1,6 +1,7 @@
 import type { Metadata } from "next";;
 import Navbar from "../components/Navbar"
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: "To do",
@@ -23,7 +24,7 @@ export default function RootLayout({
         <main style={{height:'90vh'}} className="pt-4 md:pt-0">
           {children}
         </main>
-
+        <SpeedInsights />
       </body>
     </html>
   );
